@@ -28,7 +28,7 @@
 <body class="min-h-screen max-w-md bg-base-200 mx-auto" >
 
     <!-- header -->
-    <header class="border-b-2 border-gray-300 bg-[#ffffff00]">
+    <header class="border-b-2 border-gray-300 bg-base-200 sticky top-0 z-10">
 
         <section class="w-11/12 mx-auto py-3 flex justify-between items-center">
 
@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="balance-info">
-                    <h2 class="text-[1.125rem] text-[#080808]/90 font-extrabold"> <span id="balance">$45000</span></h2>
+                    <h2 class="text-[1.125rem] text-[#080808]/90 font-extrabold">$ <span id="balance">45000</span></h2>
                     <p class="text-[0.875rem] text-[#080808]/50">Available Balance</p>
                 </div>
             </div>
@@ -58,7 +58,7 @@
         <!-- welcome text -->
         <section class="w-11/12 mx-auto pt-8">
 
-            <h2 class="text-[1.5rem] font-bold text-[#080808]">Welcome to Pay<span class="text-primary">oo</span></h2>
+            <h2 class="text-[1.5rem] font-bold text-[#080808]">Welcome to Pay<span class="text-neutral">oo</span></h2>
 
             <p class="text-[1rem]/[1.63] text-[#080808]/50 font-normal">Enjoy easy and convenient financial services with us. Cashout charge is low and.</p>
         </section>
@@ -67,38 +67,81 @@
         <section class="w-11/12 mx-auto pt-6 grid grid-cols-3 gap-3">
 
             <!-- add mony -->
-            <div class="btn btn-primary btn-soft flex-col py-5 px-6 h-full">
+            <div class="btn btn-neutral btn-soft flex-col py-5 px-6 h-full">
                 <img src="./assets/opt-1.png" alt="">
                 <p class="text-[0.875rem] font-normal">Add Money</p>
             </div>
             <!-- cash out -->
-            <div class="btn btn-primary btn-soft flex-col py-5 px-6 h-full">
+            <div class="btn btn-neutral btn-soft flex-col py-5 px-6 h-full">
                 <img src="./assets/opt-2.png" alt="">
                 <p class="text-[0.875rem] font-normal">Cashout</p>
             </div>
             <!-- transfer -->
-            <div class="btn btn-primary btn-soft flex-col py-5 px-3 h-full">
+            <div class="btn btn-neutral btn-soft flex-col py-5 px-3 h-full">
                 <img src="./assets/opt-3.png" alt="">
                 <p class="text-[0.875rem] font-normal">Transfer Money</p>
             </div> 
             <!-- bonus -->
-            <div class="btn btn-primary btn-soft flex-col py-5 px-6 h-full">
+            <div class="btn btn-neutral btn-soft flex-col py-5 px-6 h-full">
                 <img src="./assets/opt-4.png" alt="">
                 <p class="text-[0.875rem] font-normal">Get Bonus</p>
             </div> 
             <!-- pay bill -->
-            <div class="btn btn-primary btn-soft flex-col py-5 px-6 h-full">
+            <div class="btn btn-neutral btn-soft flex-col py-5 px-6 h-full">
                 <img src="./assets/opt-5.png" alt="">
                 <p class="text-[0.875rem] font-normal">Pay Bill</p>
             </div> 
             <!-- transaction -->
-            <div class="btn btn-primary btn-soft flex-col py-5 px-6 h-full">
+            <div class="btn btn-neutral btn-soft flex-col py-5 px-6 h-full">
                 <img src="./assets/opt-6.png" alt="">
                 <p class="text-[0.875rem] font-normal">Transactions</p>
             </div> 
         </section>
+
+        <!-- cash out form -->
+        <section class="w-11/12 mx-auto pt-4" >
+
+            <!-- cash out form title -->
+            <h2 class="font-semibold text-[1.125rem]/[1.2] text-[#080808]/90">Cash Out</h2>
+
+           <!-- Cash out form body -->
+            <div class="card bg-[#ffffff] w-full max-w-[402px] shrink-0 mx-auto mt-4 rounded-2xl">
+
+                <!-- main form body -->
+                <div class="card-body px-[32px] py-[32px]">
+
+                    <fieldset class="fieldset">
+
+                    <!-- Number Label -->
+                    <label class="label text-[1rem] text-[#080808FF] font-[500]">Agent Number</label>
+
+                    <!-- Agent Number -->
+                    <input id="agent-number" type="text" maxlength="11" minlength="11"  class="input w-full mt-3 rounded-[32px] border-none bg-[#f4f5f7FF] py-6 pl-5 placeholder:text-[1rem] placeholder:text-[#08080880]" placeholder="Enter 11 digit number"/>
+
+                    <!-- Amount label -->
+                    <label class="label text-[1rem] text-[#080808FF] font-[500]">Amount</label>
+
+                    <!-- cash-out Amount-->
+                    <input id="cashout-amount" type= "number" maxlength="100000" minlength="9"  class="input w-full mt-3 rounded-[32px] border-none bg-[#f4f5f7FF] py-6 pl-5 placeholder:text-[1rem] placeholder:text-[#08080880]" placeholder="Enter amount to withdraw"/>
+
+                    <!-- Pin Number Label -->
+                    <label class="label text-[1rem] mt-4 text-[#080808FF] font-[500]">Pin Number</label>
+
+                    <!-- input pin -->
+                    <input id="cashout-pin" type="password" maxlength="4" minlength="4" class="input mt-3 w-full rounded-[32px] border-none bg-[#f4f5f7FF] py-6 pl-5 placeholder:text-[1rem] placeholder:text-[#08080880]" placeholder="Enter 4 digit pin number" />
+
+                    <button id="cashout-btn" class="btn btn-primary mt-4 text-[1.25rem]/[1.2] py-[14px] rounded-[32px] font-semibold text-[#ffffff]">Withdraw Money</button>
+                    </fieldset>
+
+                </div>
+
+            </div>
+
+        </section>
         
     </main>
+
+    <script src="./js/cashout.js"></script>
     
 </body>
 </html>
