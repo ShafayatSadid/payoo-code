@@ -31,7 +31,7 @@ document.getElementById('add-btn').addEventListener('click', function(){
 
     // 5 get pin number and verify.
     const pin = getValue("add-pin");
-    if(pin !== '2712'){
+    if(pin !== '1234'){
 
         alert('Incorrect pin number');
         clearInput("add-pin");

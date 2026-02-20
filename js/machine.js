@@ -36,10 +36,16 @@ function showOnly(id){
     // get all services
     const addMoney = document.getElementById('add-money');
     const cashOut = document.getElementById('cash-out');
+    const transferMoney = document.getElementById('transfer-money')
+    const getBonus = document.getElementById('get-bonus');
+    const payBill = document.getElementById('pay-bill');
 
     // hidden all services.
     addMoney.classList.add('hidden');
     cashOut.classList.add('hidden');
+    transferMoney.classList.add('hidden');
+    getBonus.classList.add('hidden');
+    payBill.classList.add('hidden');
 
     // show only selected service.
     const selected = document.getElementById(id);

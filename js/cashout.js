@@ -23,7 +23,7 @@ document.getElementById('cashout-btn').addEventListener('click', function(){
     // validation
     if(newBalance < 0){
         alert('Please provide a valid amount.')
-        cashOutAmount.value = "";
+        clearInput('cashout-amount');
         return;
     }
 
@@ -32,7 +32,7 @@ document.getElementById('cashout-btn').addEventListener('click', function(){
     const userPin = document.getElementById('cashout-pin');
 
     // verify
-    if(pin !== '2712'){
+    if(pin !== '1234'){
 
         alert('Incorrect pin')
         userPin.value = "";
