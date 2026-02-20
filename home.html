@@ -67,12 +67,12 @@
         <section class="w-11/12 mx-auto pt-6 grid grid-cols-3 gap-3">
 
             <!-- add mony -->
-            <div class="btn btn-neutral btn-soft flex-col py-5 px-6 h-full">
+            <div onclick="showOnly('add-money')" class="btn btn-neutral btn-soft flex-col py-5 px-6 h-full">
                 <img src="./assets/opt-1.png" alt="">
                 <p class="text-[0.875rem] font-normal">Add Money</p>
             </div>
             <!-- cash out -->
-            <div class="btn btn-neutral btn-soft flex-col py-5 px-6 h-full">
+            <div onclick="showOnly('cash-out')" class="btn btn-neutral btn-soft flex-col py-5 px-6 h-full">
                 <img src="./assets/opt-2.png" alt="">
                 <p class="text-[0.875rem] font-normal">Cashout</p>
             </div>
@@ -98,8 +98,61 @@
             </div> 
         </section>
 
+        <!-- Add Money Form -->
+        <section id="add-money" class="w-11/12 mx-auto pt-4 hidden">
+
+            <!-- Add money form title -->
+            <h2 class="font-semibold text-[1.125rem]/[1.2] text-[#080808]/90">Add Money</h2>
+
+            <!-- Add money form body -->
+            <div class="card bg-[#ffffff] w-full max-w-[402px] shrink-0 mx-auto mt-4 rounded-2xl">
+
+                <!-- main form body -->
+                <div class="card-body px-[32px] py-[32px]">
+
+                    <fieldset class="fieldset">
+
+                        <!-- Bank select label-->
+                        <label class="label text-[1rem] text-[#080808FF] mb-3 font-[500]">Select A Bank</label>
+
+                        <!-- bank select -->
+                        <select id="select-bank" class="select w-full rounded-[32px] border-none bg-[#f4f5f7FF]">
+                            <option disabled selected>Select A bank</option>
+                            <option value="Brac">Brac Bank</option>
+                            <option value="BBL">BBL</option>
+                            <option value="SBL">CBL</option>
+                        </select>
+
+                        <!-- Account Number Label -->
+                        <label class="label text-[1rem] mt-4 text-[#080808FF] font-[500]">Bank Account Number</label>
+
+                        <!-- AccountAgent Number -->
+                        <input id="account-number" type="text" maxlength="11" minlength="11"  class="input w-full mt-3 rounded-[32px] border-none bg-[#f4f5f7FF] py-6 pl-5 placeholder:text-[1rem] placeholder:text-[#08080880]" placeholder="Enter 11 digit account number"/>
+
+                        <!-- Add Money Amount label -->
+                        <label class="label text-[1rem] mt-4 text-[#080808FF] font-[500]">Amount to Add</label>
+
+                        <!-- Add Money Amount-->
+                        <input id="add-amount" type= "number" maxlength="100000" minlength="9"  class="input w-full mt-3 rounded-[32px] border-none bg-[#f4f5f7FF] py-6 pl-5 placeholder:text-[1rem] placeholder:text-[#08080880]" placeholder="Enter amount to Add Money"/>
+
+                        <!-- Pin Number Label -->
+                        <label class="label text-[1rem] mt-4 text-[#080808FF] font-[500]">Pin Number</label>
+
+                        <!-- 4 Digit pin -->
+                        <input id="add-pin" type="password" maxlength="4" minlength="4" class="input mt-3 w-full rounded-[32px] border-none bg-[#f4f5f7FF] py-6 pl-5 placeholder:text-[1rem] placeholder:text-[#08080880]" placeholder="Enter 4 digit pin number" />
+
+                        <!-- add money btn -->
+                        <button id="add-btn" class="btn btn-primary mt-4 text-[1.25rem]/[1.2] py-[14px] rounded-[32px] font-semibold text-[#ffffff]">Add Money</button>
+                    </fieldset>
+
+                </div>
+
+            </div>
+
+        </section>
+
         <!-- cash out form -->
-        <section class="w-11/12 mx-auto pt-4" >
+        <section id="cash-out" class="w-11/12 mx-auto pt-4 hidden" >
 
             <!-- cash out form title -->
             <h2 class="font-semibold text-[1.125rem]/[1.2] text-[#080808]/90">Cash Out</h2>
@@ -112,25 +165,26 @@
 
                     <fieldset class="fieldset">
 
-                    <!-- Number Label -->
-                    <label class="label text-[1rem] text-[#080808FF] font-[500]">Agent Number</label>
+                        <!-- Number Label -->
+                        <label class="label text-[1rem] text-[#080808FF] font-[500]">Agent Number</label>
 
-                    <!-- Agent Number -->
-                    <input id="agent-number" type="text" maxlength="11" minlength="11"  class="input w-full mt-3 rounded-[32px] border-none bg-[#f4f5f7FF] py-6 pl-5 placeholder:text-[1rem] placeholder:text-[#08080880]" placeholder="Enter 11 digit number"/>
+                        <!-- Agent Number -->
+                        <input id="agent-number" type="text" maxlength="11" minlength="11"  class="input w-full mt-3 rounded-[32px] border-none bg-[#f4f5f7FF] py-6 pl-5 placeholder:text-[1rem] placeholder:text-[#08080880]" placeholder="Enter 11 digit number"/>
 
-                    <!-- Amount label -->
-                    <label class="label text-[1rem] text-[#080808FF] font-[500]">Amount</label>
+                        <!-- Amount label -->
+                        <label class="label text-[1rem] text-[#080808FF] font-[500]">Amount</label>
 
-                    <!-- cash-out Amount-->
-                    <input id="cashout-amount" type= "number" maxlength="100000" minlength="9"  class="input w-full mt-3 rounded-[32px] border-none bg-[#f4f5f7FF] py-6 pl-5 placeholder:text-[1rem] placeholder:text-[#08080880]" placeholder="Enter amount to withdraw"/>
+                        <!-- cash-out Amount-->
+                        <input id="cashout-amount" type= "number" maxlength="100000" minlength="9"  class="input w-full mt-3 rounded-[32px] border-none bg-[#f4f5f7FF] py-6 pl-5 placeholder:text-[1rem] placeholder:text-[#08080880]" placeholder="Enter amount to withdraw"/>
 
-                    <!-- Pin Number Label -->
-                    <label class="label text-[1rem] mt-4 text-[#080808FF] font-[500]">Pin Number</label>
+                        <!-- Pin Number Label -->
+                        <label class="label text-[1rem] mt-4 text-[#080808FF] font-[500]">Pin Number</label>
 
-                    <!-- input pin -->
-                    <input id="cashout-pin" type="password" maxlength="4" minlength="4" class="input mt-3 w-full rounded-[32px] border-none bg-[#f4f5f7FF] py-6 pl-5 placeholder:text-[1rem] placeholder:text-[#08080880]" placeholder="Enter 4 digit pin number" />
+                        <!-- input pin -->
+                        <input id="cashout-pin" type="password" maxlength="4" minlength="4" class="input mt-3 w-full rounded-[32px] border-none bg-[#f4f5f7FF] py-6 pl-5 placeholder:text-[1rem] placeholder:text-[#08080880]" placeholder="Enter 4 digit pin number" />
 
-                    <button id="cashout-btn" class="btn btn-primary mt-4 text-[1.25rem]/[1.2] py-[14px] rounded-[32px] font-semibold text-[#ffffff]">Withdraw Money</button>
+                        <button id="cashout-btn" class="btn btn-primary mt-4 text-[1.25rem]/[1.2] py-[14px] rounded-[32px] font-semibold text-[#ffffff]">Withdraw Money</button>
+
                     </fieldset>
 
                 </div>
@@ -141,6 +195,9 @@
         
     </main>
 
+    <!-- Javascript file connection -->
+    <script src="./js/machine.js"></script>
+    <script src="./js/add_money.js"></script>
     <script src="./js/cashout.js"></script>
     
 </body>

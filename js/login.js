@@ -1,27 +1,31 @@
 document.getElementById('btn-login').addEventListener('click', function(){
     
-    // step 1 get input number
-    const inputNumber = document.getElementById('input-number');
-    const number = inputNumber.value;
-    // & get input pin
-    const inputPin = document.getElementById('input-pin');
-    const pin = inputPin.value;
-    console.log('Number:', number, 'Pin:', pin);
+    // step 1 get input number and validate
+    const number = getValue('input-number');
+    if(number.length !== 11){
 
-    // step 2 match the number & pin.
-
-    if(number === "01782978746" && pin === "2712"){
-        alert ("login successfully");
-
-        // final step go to homepage
-        window.location.assign("/home.html")
+        alert("Please Enter A 11 Digit Number");
+        clearInput('input-number');
+        return;
     }
-    else{
-        alert("incorrect number or pin")
+
+    // get input pin and validate.
+    const pin = getValue('input-pin');
+    if(pin !== "1234"){
+
+        alert('Incorrect Pin');
+        clearInput("input-pin");
+        return;
     }
+    
+
+    // true: login successfully
+    alert('Login Successfully')
+
+    // Go to homepage
+    window.location.assign("/home.html");
 
     // clear the input boxes
-    inputNumber.value = "";
-    inputPin.value = "";
-
+    clearInput('input-number');
+    clearInput('input-pin')
 })
