@@ -23,7 +23,7 @@ document.getElementById('btn-login').addEventListener('click', function(){
     alert('Login Successfully')
 
     // Go to homepage
-    window.location.assign("/home.html");
+    window.location.assign("home.html");
 
     // clear the input boxes
     clearInput('input-number');
